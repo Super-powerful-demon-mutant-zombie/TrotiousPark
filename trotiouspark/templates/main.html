@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+    .body1 {
+        background-color:  chocolate;
+        color: black;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trotious Park <3</title>
 </head>
-<body>
-    {% include 'navbar.html' %}
-    
-    {% block content %}
 
+<body class="body1">
+    {% include 'navbar.html' %}
+    {% if messages %}
+        <ul class="messages">
+    {% for message in messages %}
+      <li>{{message}}</li>
+    {% endfor %}
+  </ul>
+    {% endif %}
+
+    {% block content %}
+    
 
 
     {% endblock %}
